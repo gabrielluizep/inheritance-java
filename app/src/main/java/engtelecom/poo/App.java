@@ -3,12 +3,18 @@
  */
 package engtelecom.poo;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import engtelecom.poo.products.Phone;
+import engtelecom.poo.products.WirelessPhone;
 
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Phone p = new Phone("1", "123", "iPhone", "black", 0.5, new double[] { 1.0, 2.0, 3.0 });
+        WirelessPhone w = new WirelessPhone("1", "1", "gondola", "red", .25, new double[] { .3, .3, .3 }, .5, 2, 25);
+
+        Phone t = w;
+
+        ((WirelessPhone) t).setChannelsQuantity(3);
+
+        System.out.println(w);
     }
 }
