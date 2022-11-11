@@ -9,12 +9,14 @@ import engtelecom.poo.products.WirelessPhone;
 public class App {
     public static void main(String[] args) {
         Phone p = new Phone("1", "123", "iPhone", "black", 0.5, new double[] { 1.0, 2.0, 3.0 });
+        Phone b = new Phone("1", "123", "iPhone", "black", 0.5, new double[] { 1.0, 2.0, 3.0 });
         WirelessPhone w = new WirelessPhone("1", "1", "gondola", "red", .25, new double[] { .3, .3, .3 }, .5, 2, 25);
 
-        Phone t = w;
+        if (p.equals(b)) {
+            System.out.println("p and w are equal");
+        } else {
+            System.out.println("p and w are not equal");
+        }
 
-        ((WirelessPhone) t).setChannelsQuantity(3);
-
-        System.out.println(w);
     }
 }
